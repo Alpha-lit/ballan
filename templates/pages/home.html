@@ -1,0 +1,422 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Ballan Travel{% endblock %}
+{% block content %}
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/hero-1.jpg' %}" class="img-fluid" alt="Travel destination">
+                        <div class="carousel-caption">
+                            <div class="text-center p-4" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-3 mb-md-4 wow fadeInUp" data-wow-delay="0.1s">Discover Amazing Places</h4>
+                                <h1 class="display-1 text-capitalize text-white mb-3 mb-md-4 wow fadeInUp" data-wow-delay="0.3s">Your Journey Begins Here!</h1>
+                                <p class="text-white mb-4 mb-md-5 fs-5 wow fadeInUp" data-wow-delay="0.5s">Explore the world with Ballan Travel. We create unforgettable travel experiences with carefully crafted itineraries to the world's most stunning destinations.
+                                </p>
+                                <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5 wow fadeInUp" data-wow-delay="0.7s" href="{% url 'services' %}">Explore Destinations</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/hero-2.jpg' %}" class="img-fluid" alt="Travel experience">
+                        <div class="carousel-caption">
+                            <div class="text-center p-4" style="max-width: 900px;">
+                                <h5 class="text-white text-uppercase fw-bold mb-3 mb-md-4 wow fadeInUp" data-wow-delay="0.1s">Premium Travel Experiences</h5>
+                                <h1 class="display-1 text-capitalize text-white mb-3 mb-md-4 wow fadeInUp" data-wow-delay="0.3s">Create Memories That Last Forever</h1>
+                                <p class="text-white mb-4 mb-md-5 fs-5 wow fadeInUp" data-wow-delay="0.5s">With over 30 years of experience, our travel experts design personalized journeys that exceed your expectations and create lifelong memories.
+                                </p>
+                                <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5 wow fadeInUp" data-wow-delay="0.7s" href="{% url 'about' %}">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-secondary wow fadeInLeft" data-wow-delay="0.2s" aria-hidden="false"></span>
+                    <span class="visually-hidden-focusable">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-secondary wow fadeInRight" data-wow-delay="0.2s" aria-hidden="false"></span>
+                    <span class="visually-hidden-focusable">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+        <!-- About Start -->
+        <div class="container-fluid py-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="bg-light rounded">
+                            <img src="{% static 'img/about.png' %}" class="img-fluid w-100" style="margin-bottom: -7px;" alt="Image">
+                            <img src="{% static 'img/about-1.jpg' %}" class="img-fluid w-100 border-bottom border-5 border-primary" style="border-top-right-radius: 300px; border-top-left-radius: 300px;" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                        <h5 class="sub-title pe-3">About the company</h5>
+                        <h1 class="display-5 mb-4">We're Trusted Immigration Consultant Agency.</h1>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt architecto consectetur iusto perferendis blanditiis assumenda dignissimos, commodi fuga culpa earum explicabo libero sint est mollitia saepe! Sequi asperiores rerum nemo!</p>
+                        <div class="row gy-4 align-items-center">
+                            <div class="col-12 col-sm-6 d-flex align-items-center">
+                                <i class="fas fa-map-marked-alt fa-3x text-secondary"></i>
+                                <h5 class="ms-4">Best Immigration Resources</h5>
+                            </div>
+                            <div class="col-12 col-sm-6 d-flex align-items-center">
+                                <i class="fas fa-passport fa-3x text-secondary"></i>
+                                <h5 class="ms-4">Return Visas Availabile</h5>
+                            </div>
+                            <div class="col-4 col-md-3">
+                                <div class="bg-light text-center rounded p-3">
+                                    <div class="mb-2">
+                                        <i class="fas fa-ticket-alt fa-4x text-primary"></i>
+                                    </div>
+                                    <h1 class="display-5 fw-bold mb-2">3</h1>
+                                    <p class="text-muted mb-0">Years of Experience</p>
+                                </div>
+                            </div>
+                            <div class="col-8 col-md-9">
+                                <div class="mb-5">
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> Offer 100 % Genuine Assistance</p>
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> It's Faster & Reliable Execution</p>
+                                    <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> Accurate & Expert Advice</p>
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                                        <a href="" class="position-relative wow tada" data-wow-delay=".9s">
+                                            <i class="fa fa-phone-alt text-primary fa-3x"></i>
+                                            <div class="position-absolute" style="top: 0; left: 25px;">
+                                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="text-primary">Have any questions?</span>
+                                        <span class="text-secondary fw-bold fs-5" style="letter-spacing: 2px;">Free: +90 533 874 23 95</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Services Start -->
+        <div class="container-fluid service overflow-hidden py-5">
+            <div class="container">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">Travel Services</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">Explore Our Travel Experiences</h1>
+                    <p class="mb-0">At Ballan Travel, we offer a wide range of travel services to suit every type of traveler. From adventure seekers to relaxation enthusiasts, we have something special for everyone.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-1.jpg' %}" class="img-fluid w-100 rounded" alt="Adventure Travel">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Adventure Travel</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Adventure Travel</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Embark on thrilling adventures that push your boundaries and create unforgettable memories. From mountain climbing to deep-sea diving, we have it all.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-2.jpg' %}" class="img-fluid w-100 rounded" alt="Luxury Tours">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Luxury Tours</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Luxury Tours</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Experience the world in style with our luxury travel packages. Enjoy premium accommodations, exclusive experiences, and personalized service.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-3.jpg' %}" class="img-fluid w-100 rounded" alt="Cultural Experiences">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Cultural Tours</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Cultural Tours</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Immerse yourself in local cultures with our carefully crafted cultural tours. Experience authentic traditions, cuisine, and ways of life.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-1.jpg' %}" class="img-fluid w-100 rounded" alt="Family Vacations">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Family Vacations</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Family Vacations</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Create lasting memories with your loved ones on our family-friendly vacations. We offer activities and accommodations suitable for all ages.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-2.jpg' %}" class="img-fluid w-100 rounded" alt="Honeymoon Packages">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Honeymoon Packages</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Honeymoon Packages</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Celebrate your new beginning with our romantic honeymoon packages. Enjoy intimate settings, breathtaking views, and special touches.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item">
+                            <div class="service-inner">
+                                <div class="service-img">
+                                    <img src="{% static 'img/service-3.jpg' %}" class="img-fluid w-100 rounded" alt="Beach Holidays">
+                                </div>
+                                <div class="service-title">
+                                    <div class="service-title-name">
+                                        <div class="bg-primary text-center rounded p-3 mx-5 mb-4">
+                                            <a href="#" class="h4 text-white mb-0">Beach Holidays</a>
+                                        </div>
+                                        <a class="btn bg-light text-secondary rounded-pill py-3 px-5 mb-4" href="#">Explore More</a>
+                                    </div>
+                                    <div class="service-content pb-4">
+                                        <a href="#"><h4 class="text-white mb-4 py-3">Beach Holidays</h4></a>
+                                        <div class="px-4">
+                                            <p class="mb-4">Relax and unwind on pristine beaches with our beach holiday packages. Enjoy sun, sand, and sea at some of the world's most beautiful coastlines.</p>
+                                            <a class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5" href="#">Explore More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-fluid testimonial overflow-hidden py-5">
+            <div class="container">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">TRAVELER REVIEWS</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">What Our Travelers Say</h1>
+                    <p class="mb-0">Don't just take our word for it. Hear from our satisfied customers who have experienced the magic of travel with Ballan Travel.</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow zoomInDown" data-wow-delay="0.2s">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">Our European tour with Ballan Travel was absolutely incredible! Every detail was perfectly planned, from the accommodations to the guided tours. The local guides were knowledgeable and friendly, making our experience truly memorable.</p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/testimonial-1.jpg' %}" alt="Customer testimonial">
+                            </div>
+                            <div class="my-auto">
+                                <h5>Sarah Johnson</h5>
+                                <p class="mb-0">European Explorer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">I've traveled with many agencies, but Ballan Travel stands out. Their attention to detail and personalized service made my honeymoon trip to Maldives absolutely perfect. They went above and beyond to make our special trip unforgettable.</p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/testimonial-2.jpg' %}" alt="Customer testimonial">
+                            </div>
+                            <div class="my-auto">
+                                <h5>Michael Chen</h5>
+                                <p class="mb-0">Honeymooner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content p-4 mb-5">
+                            <p class="fs-5 mb-0">Our family vacation to Costa Rica was perfectly organized by Ballan Travel. They arranged age-appropriate activities for everyone, from our young kids to grandparents. The accommodations were family-friendly, and the itinerary was well-paced.</p>
+                            <div class="d-flex justify-content-end">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="rounded-circle me-4" style="width: 100px; height: 100px;">
+                                <img class="img-fluid rounded-circle" src="{% static 'img/testimonial-3.jpg' %}" alt="Customer testimonial">
+                            </div>
+                            <div class="my-auto">
+                                <h5>Emily Rodriguez</h5>
+                                <p class="mb-0">Family Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <!-- Contact Start -->
+        <div class="container-fluid contact overflow-hidden py-5">
+            <div class="container pb-5">
+                <div class="office">
+                    <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="sub-style">
+                            <h5 class="sub-title text-primary px-3">Our Offices</h5>
+                        </div>
+                        <h1 class="display-5 mb-4">Find Us Worldwide</h1>
+                        <p class="mb-0">Ballan Travel has offices in major cities around the world to better serve our global clientele. Visit us or contact us for personalized travel assistance.</p>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="office-item p-4">
+                                <div class="office-img mb-4">
+                                    <img src="{% static 'img/office-2.jpg' %}" class="img-fluid w-100 rounded" alt="Sydney Office">
+                                </div>
+                                <div class="office-content d-flex flex-column">
+                                    <h4 class="mb-2">Sydney</h4>
+                                    <a href="tel:+61212345678" class="text-secondary fs-5 mb-2">+61 2 1234 5678</a>
+                                    <a href="mailto:sydney@ballantravel.com" class="text-muted fs-5 mb-2">sydney@ballantravel.com</a>
+                                    <p class="mb-0">123 Circular Quay, Sydney NSW 2000, Australia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="office-item p-4">
+                                <div class="office-img mb-4">
+                                    <img src="{% static 'img/office-1.jpg' %}" class="img-fluid w-100 rounded" alt="Toronto Office">
+                                </div>
+                                <div class="office-content d-flex flex-column">
+                                    <h4 class="mb-2">Toronto</h4>
+                                    <a href="tel:+14161234567" class="text-secondary fs-5 mb-2">(416) 123-4567</a>
+                                    <a href="mailto:toronto@ballantravel.com" class="text-muted fs-5 mb-2">toronto@ballantravel.com</a>
+                                    <p class="mb-0">789 Bay Street, Toronto, ON M5W 1A6, Canada</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="office-item p-4">
+                                <div class="office-img mb-4">
+                                    <img src="{% static 'img/office-3.jpg' %}" class="img-fluid w-100 rounded" alt="London Office">
+                                </div>
+                                <div class="office-content d-flex flex-column">
+                                    <h4 class="mb-2">London</h4>
+                                    <a href="tel:+442012345678" class="text-secondary fs-5 mb-2">+44 20 1234 5678</a>
+                                    <a href="mailto:london@ballantravel.com" class="text-muted fs-5 mb-2">london@ballantravel.com</a>
+                                    <p class="mb-0">456 Piccadilly, London W1J 0BR, United Kingdom</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="office-item p-4">
+                                <div class="office-img mb-4">
+                                    <img src="{% static 'img/office-4.jpg' %}" class="img-fluid w-100 rounded" alt="Dubai Office">
+                                </div>
+                                <div class="office-content d-flex flex-column">
+                                    <h4 class="mb-2">Dubai</h4>
+                                    <a href="tel:+97141234567" class="text-secondary fs-5 mb-2">+971 4 123 4567</a>
+                                    <a href="mailto:dubai@ballantravel.com" class="text-muted fs-5 mb-2">dubai@ballantravel.com</a>
+                                    <p class="mb-0">123 Sheikh Zayed Road, Dubai, UAE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+{% endblock %}

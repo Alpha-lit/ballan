@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us - Ballan Travel{% endblock %}
+
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb" style="background-image: linear-gradient(135deg, rgba(50, 77, 83, 0.85)), url('{% static 'img/breadcrumb.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 400px;">
+    <div class="container text-center py-5" style="max-width: 900px; position: relative; z-index: 1;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h3>
+        <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-secondary">About</li>
+        </ol>    
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- About Start -->
+<div class="container-fluid overflow-hidden py-5">
+    <div class="container pt-5">
+        <div class="row g-5">
+            <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="bg-light rounded">
+                    <img src="{% static 'img/about.png' %}" class="img-fluid w-100" style="margin-bottom: -7px;" alt="Travel experience">
+                    <img src="{% static 'img/about-1.jpg' %}" class="img-fluid w-100 border-bottom border-5 border-primary" style="border-top-right-radius: 300px; border-top-left-radius: 300px;" alt="Travel destination">
+                </div>
+            </div>
+            <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                <h5 class="sub-title pe-3">About Ballan Travel</h5>
+                <h1 class="display-5 mb-4">We're Your Trusted Travel Partner for Unforgettable Journeys.</h1>
+                <p class="mb-4">With over 30 years of experience in the travel industry, Ballan Travel has been crafting exceptional journeys that create lasting memories. Our team of dedicated travel experts is passionate about exploring the world and helping you discover new destinations.</p>
+                <div class="row gy-4 align-items-center">
+                    <div class="col-12 col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-globe-americas fa-3x text-secondary"></i>
+                        <h5 class="ms-4">Global Destinations</h5>
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-hotel fa-3x text-secondary"></i>
+                        <h5 class="ms-4">Premium Accommodations</h5>
+                    </div>
+                    <div class="col-4 col-md-3">
+                        <div class="bg-light text-center rounded p-3">
+                            <div class="mb-2">
+                                <i class="fas fa-plane fa-4x text-primary"></i>
+                            </div>
+                            <h1 class="display-5 fw-bold mb-2">30+</h1>
+                            <p class="text-muted mb-0">Years of Experience</p>
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-9">
+                        <div class="mb-5">
+                            <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> 100% Tailored Travel Experiences</p>
+                            <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> Expert Local Guides</p>
+                            <p class="text-primary h6 mb-3"><i class="fa fa-check-circle text-secondary me-2"></i> 24/7 Customer Support</p>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                                <a href="{% url 'contact' %}" class="position-relative wow tada" data-wow-delay=".9s">
+                                    <i class="fa fa-phone-alt text-primary fa-3x"></i>
+                                    <div class="position-absolute" style="top: 0; left: 25px;">
+                                        <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <span class="text-primary">Have any questions?</span>
+                                <span class="text-secondary fw-bold fs-5" style="letter-spacing: 2px;">Free: +1 (234) 567-890</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Team Start -->
+<div class="container-fluid team py-5">
+    <div class="container py-5">
+        <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="sub-style">
+                <h5 class="sub-title text-primary px-3">Our Team</h5>
+            </div>
+            <h1 class="display-5 mb-4">Meet Our Travel Experts</h1>
+            <p class="mb-0">Our team of experienced travel consultants is dedicated to creating the perfect journey for each client.</p>
+        </div>
+        <div class="row g-5 justify-content">
+            <div class="col-lg-3 col-md-6 offset-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item h-100 d-flex flex-column">
+                    <div class="team-img flex-grow-1 d-flex align-items-center justify-content-center" style="height: 250px;">
+                        <img src="{% static 'img/team-1.jpeg' %}" class="img-fluid rounded" alt="Team Member" style="max-height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="team-text bg-primary text-center rounded p-4">
+                        <h5 class="text-white">Abdullahi Abdulkadir</h5>
+                        <p class="text-white mb-0">CEO/Founder</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item h-100 d-flex flex-column">
+                    <div class="team-img flex-grow-1 d-flex align-items-center justify-content-center" style="height: 250px;">
+                        <img src="{% static 'img/team-2.jpeg' %}" class="img-fluid rounded" alt="Team Member" style="max-height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="team-text bg-primary text-center rounded p-4">
+                        <h5 class="text-white">Zakarie Ibrahim</h5>
+                        <p class="text-white mb-0">Travel Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Contact Start -->
+<div class="container-fluid contact overflow-hidden py-5">
+    <div class="container pb-5">
+        <div class="office">
+            <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h5 class="sub-title text-primary px-3">Our Offices</h5>
+                </div>
+                <h1 class="display-5 mb-4">Find Us Worldwide</h1>
+                <p class="mb-0">Ballan Travel has offices in major cities around the world to better serve our global clientele. Visit us or contact us for personalized travel assistance.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="{% static 'img/office-2.jpg' %}" class="img-fluid w-100 rounded" alt="Sydney Office">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">Mugadishu</h4>
+                            <a href="tel:+61212345678" class="text-secondary fs-5 mb-2">+61 2 1234 5678</a>
+                            <a href="mailto:sydney@ballantravel.com" class="text-muted fs-5 mb-2">sydney@ballantravel.com</a>
+                            <p class="mb-0">123 Circular Quay, Sydney NSW 2000, Australia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="{% static 'img/office-1.jpg' %}" class="img-fluid w-100 rounded" alt="Toronto Office">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">Toronto</h4>
+                            <a href="tel:+14161234567" class="text-secondary fs-5 mb-2">(416) 123-4567</a>
+                            <a href="mailto:toronto@ballantravel.com" class="text-muted fs-5 mb-2">toronto@ballantravel.com</a>
+                            <p class="mb-0">789 Bay Street, Toronto, ON M5W 1A6, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="{% static 'img/office-3.jpg' %}" class="img-fluid w-100 rounded" alt="London Office">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">London</h4>
+                            <a href="tel:+442012345678" class="text-secondary fs-5 mb-2">+44 20 1234 5678</a>
+                            <a href="mailto:london@ballantravel.com" class="text-muted fs-5 mb-2">london@ballantravel.com</a>
+                            <p class="mb-0">456 Piccadilly, London W1J 0BR, United Kingdom</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="office-item p-4">
+                        <div class="office-img mb-4">
+                            <img src="{% static 'img/office-4.jpg' %}" class="img-fluid w-100 rounded" alt="Dubai Office">
+                        </div>
+                        <div class="office-content d-flex flex-column">
+                            <h4 class="mb-2">Dubai</h4>
+                            <a href="tel:+97141234567" class="text-secondary fs-5 mb-2">+971 4 123 4567</a>
+                            <a href="mailto:dubai@ballantravel.com" class="text-muted fs-5 mb-2">dubai@ballantravel.com</a>
+                            <p class="mb-0">123 Sheikh Zayed Road, Dubai, UAE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+{% endblock %}

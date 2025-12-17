@@ -1,0 +1,418 @@
+<!-- templates/pages/contact.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Ballan Travel{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-breadcrumb" style="background: linear-gradient(135deg, rgba(50, 77, 83, 0.85)); min-height: 400px;">
+    <div class="container text-center py-5" style="max-width: 900px; position: relative; z-index: 1;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h3>
+        <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-secondary">Contact</li>
+        </ol>    
+    </div>
+</div><!-- Page Header End -->
+
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-5 mb-4" style="color: #324D53;">Get In Touch With Us</h1>
+            <p class="mb-0">Have questions or need assistance with your travel plans? Our team is here to help. Reach out to us through any of the following channels.</p>
+        </div>
+        
+        <!-- Contact Info Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="contact-item bg-light rounded p-4 h-100 d-flex flex-column align-items-center text-center">
+                    <div class="contact-icon bg-primary rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-map-marker-alt fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Our Office</h4>
+                    <p class="mb-0">Mogadishu, Somalia</p>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="contact-item bg-light rounded p-4 h-100 d-flex flex-column align-items-center text-center">
+                    <div class="contact-icon bg-primary rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-envelope fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Email Us</h4>
+                    <a href="mailto:info@ballantravel.com" class="text-secondary text-decoration-none">info@ballantravel.com</a>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="contact-item bg-light rounded p-4 h-100 d-flex flex-column align-items-center text-center">
+                    <div class="contact-icon bg-primary rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-phone-alt fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Call Us</h4>
+                    <a href="tel:+252610000000" class="text-secondary text-decoration-none">+252 610 000 000</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Form & Map -->
+        <div class="row g-4">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="bg-light rounded p-5 h-100">
+                    <h3 class="mb-4" style="color: #324D53;">Send Us a Message</h3>
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    {{ form.name }}
+                                    <label for="{{ form.name.id_for_label }}" class="form-label">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
+                                    {{ form.email }}
+                                    <label for="{{ form.email.id_for_label }}" class="form-label">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    {{ form.subject }}
+                                    <label for="{{ form.subject.id_for_label }}" class="form-label">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    {{ form.message }}
+                                    <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Subscribe to our newsletter for travel deals and updates
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="bg-light rounded h-100 overflow-hidden position-relative">
+                    <div class="map-overlay d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt fa-4x text-primary mb-3"></i>
+                            <h4 class="text-white mb-3">Find Us Here</h4>
+                            <p class="text-white mb-4">Mogadishu, Somalia</p>
+                            <a href="https://maps.google.com/?q=Mogadishu,+Somalia" target="_blank" class="btn btn-light rounded-pill py-2 px-4">Get Directions</a>
+                        </div>
+                    </div>
+                    <iframe class="rounded w-100 h-100" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8175688252337!2d45.3181!3d2.0469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMogadishu%2C%20Somalia!5e0!3m2!1sen!2s!4v1234567890" 
+                        style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+<!-- Office Locations -->
+<div class="container-fluid office py-5">
+    <div class="container py-5">
+        <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="sub-style">
+                <h5 class="sub-title text-primary px-3">Our Offices</h5>
+            </div>
+            <h1 class="display-5 mb-4">Find Us Worldwide</h1>
+            <p class="mb-0">Ballan Travel has offices in major cities around the world to better serve our global clientele.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="office-item p-4">
+                    <div class="office-img mb-4">
+                        <img src="{% static 'img/office-2.jpg' %}" class="img-fluid w-100 rounded" alt="Sydney Office">
+                    </div>
+                    <div class="office-content d-flex flex-column">
+                        <h4 class="mb-2">Sydney</h4>
+                        <a href="tel:+61212345678" class="text-secondary fs-5 mb-2">+61 2 1234 5678</a>
+                        <a href="mailto:sydney@ballantravel.com" class="text-muted fs-5 mb-2">sydney@ballantravel.com</a>
+                        <p class="mb-0">123 Circular Quay, Sydney NSW 2000, Australia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="office-item p-4">
+                    <div class="office-img mb-4">
+                        <img src="{% static 'img/office-1.jpg' %}" class="img-fluid w-100 rounded" alt="Toronto Office">
+                    </div>
+                    <div class="office-content d-flex flex-column">
+                        <h4 class="mb-2">Toronto</h4>
+                        <a href="tel:+14161234567" class="text-secondary fs-5 mb-2">(416) 123-4567</a>
+                        <a href="mailto:toronto@ballantravel.com" class="text-muted fs-5 mb-2">toronto@ballantravel.com</a>
+                        <p class="mb-0">789 Bay Street, Toronto, ON M5W 1A6, Canada</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="office-item p-4">
+                    <div class="office-img mb-4">
+                        <img src="{% static 'img/office-3.jpg' %}" class="img-fluid w-100 rounded" alt="London Office">
+                    </div>
+                    <div class="office-content d-flex flex-column">
+                        <h4 class="mb-2">London</h4>
+                        <a href="tel:+442012345678" class="text-secondary fs-5 mb-2">+44 20 1234 5678</a>
+                        <a href="mailto:london@ballantravel.com" class="text-muted fs-5 mb-2">london@ballantravel.com</a>
+                        <p class="mb-0">456 Piccadilly, London W1J 0BR, United Kingdom</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="office-item p-4">
+                    <div class="office-img mb-4">
+                        <img src="{% static 'img/office-4.jpg' %}" class="img-fluid w-100 rounded" alt="Dubai Office">
+                    </div>
+                    <div class="office-content d-flex flex-column">
+                        <h4 class="mb-2">Dubai</h4>
+                        <a href="tel:+97141234567" class="text-secondary fs-5 mb-2">+971 4 123 4567</a>
+                        <a href="mailto:dubai@ballantravel.com" class="text-muted fs-5 mb-2">dubai@ballantravel.com</a>
+                        <p class="mb-0">123 Sheikh Zayed Road, Dubai, UAE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Office Locations End -->
+
+<!-- FAQ Section -->
+<div class="container-fluid faq py-5">
+    <div class="container py-5">
+        <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="sub-style">
+                <h5 class="sub-title text-primary px-3">Frequently Asked Questions</h5>
+            </div>
+            <h1 class="display-5 mb-4">Got Questions?</h1>
+            <p class="mb-0">Find answers to common questions about our services and booking process.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How do I book a trip with Ballan Travel?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Booking with Ballan Travel is simple! You can either use our online booking form, call our customer service, or visit one of our offices. Our team will guide you through the entire process.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Do you offer customized travel packages?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! We specialize in creating personalized travel experiences tailored to your preferences, budget, and interests. Just let our team know your requirements, and we'll design the perfect itinerary for you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What payment methods do you accept?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We accept various payment methods including credit/debit cards, bank transfers, and mobile payment solutions. Payment options may vary slightly depending on your location, so please check with our team for specific details.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What happens if I need to cancel my trip?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We understand that plans change. Our cancellation policy varies depending on the type of booking and how close to the travel date you cancel. We recommend purchasing travel insurance for added peace of mind. Contact our team for specific details about your booking.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ Section End -->
+
+<!-- CTA Section -->
+<div class="container-fluid cta py-5 position-relative overflow-hidden" style="background-color: #ffffff;">
+    <!-- Decorative Elements -->
+    <div class="position-absolute" style="top: -50px; left: -50px; width: 200px; height: 200px; border-radius: 50%; background: rgba(50, 77, 83, 0.05);"></div>
+    <div class="position-absolute" style="bottom: -30px; right: -30px; width: 150px; height: 150px; border-radius: 50%; background: rgba(50, 77, 83, 0.05);"></div>
+    
+    <div class="container py-5 position-relative z-index-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <div class="mb-5">
+                    <h1 class="display-5 mb-4 position-relative" style="color: rgba(50, 77, 83, 0.85);">Ready to Start Your Journey?</h1>
+                    <div class="position-absolute" style="top: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: rgba(183, 78, 45, 0.9); border-radius: 2px;"></div>
+                    <p class="fs-5 mb-5" style="color: rgba(50, 77, 83, 0.85);">Our team of travel experts is ready to help you plan the perfect trip. Get in touch with us today to begin your adventure.</p>
+                </div>
+                
+                <div class="d-flex justify-content-center gap-4 flex-wrap position-relative">
+                    <!-- Primary Button with Animation -->
+                    <div class="position-relative">
+                        <a href="{% url 'contact' %}" class="btn rounded-pill py-3 px-5 position-relative overflow-hidden z-index-1" style="color: #ffffff; background-color: rgba(50, 77, 83, 0.85);">
+                            <span class="position-relative z-index-2">Contact Us</span>
+                            <div class="position-absolute top-0 start-0 h-100 rounded-pill" style="width: 0%; transition: width 0.3s ease; z-index: 1; background-color: rgba(183, 78, 45, 0.9);"></div>
+                        </a>
+                    </div>
+                    
+                    <!-- Secondary Button with Icon -->
+                    <a href="{% url 'services' %}" class="btn btn-outline-light rounded-pill py-3 px-5 position-relative d-flex align-items-center" style="color: rgba(50, 77, 83, 0.85); border-color: rgba(50, 77, 83, 0.85);">
+                        <span>Our Services</span>
+                        <i class="fas fa-arrow-right ms-2" style="color: rgba(50, 77, 83, 0.85);"></i>
+                    </a>
+                </div>
+                
+                <!-- Additional Contact Options -->
+                <div class="mt-5 d-flex justify-content-center gap-4">
+                    <a href="tel:+252610000000" class="text-decoration-none d-flex align-items-center" style="color: rgba(50, 77, 83, 0.85);">
+                        <div class="rounded-circle p-2 me-2" style="background-color: rgba(50, 77, 83, 0.1);">
+                            <i class="fas fa-phone" style="color: rgba(50, 77, 83, 0.85);"></i>
+                        </div>
+                        <span>+252 610 000 000</span>
+                    </a>
+                    <a href="mailto:info@ballantravel.com" class="text-decoration-none d-flex align-items-center" style="color: rgba(50, 77, 83, 0.85);">
+                        <div class="rounded-circle p-2 me-2" style="background-color: rgba(50, 77, 83, 0.1);">
+                            <i class="fas fa-envelope" style="color: rgba(50, 77, 83, 0.85);"></i>
+                        </div>
+                        <span>info@ballantravel.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CTA Section End -->
+
+<style>
+.cta-btn-primary:hover div {
+    width: 100% !important;
+}
+
+.cta-btn-primary {
+    transition: all 0.3s ease;
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(50, 77, 83, 0.2);
+}
+
+.cta-btn-secondary {
+    transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(50, 77, 83, 0.2);
+    background-color: rgba(50, 77, 83, 0.05);
+}
+
+.cta-contact-option {
+    transition: all 0.3s ease;
+}
+
+.cta-contact-option:hover {
+    transform: translateY(-3px);
+}
+
+.cta-contact-option .bg-circle {
+    transition: all 0.3s ease;
+}
+
+.cta-contact-option:hover .bg-circle {
+    background-color: rgba(50, 77, 83, 0.2);
+}
+</style><style>
+/* Custom styles for contact page */
+.contact-item {
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(50, 77, 83, 0.85));
+    z-index: 1;
+}
+
+.accordion-button {
+    background-color: #f8f9fa;
+    color: #324D53;
+    font-weight: 600;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #324D53;
+    color: white;
+}
+
+.accordion-button:hover {
+    background-color: #B74E2D;
+    color: white;
+}
+
+.accordion-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+}
+
+.accordion-item {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-floating label {
+    color: #6c757d;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #324D53;
+}
+</style>
+{% endblock %}

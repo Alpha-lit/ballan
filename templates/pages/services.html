@@ -1,0 +1,146 @@
+<!-- templates/pages/services.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services - Ballan Travel{% endblock %}
+
+{% block content %}
+<!-- Page Header Start -->
+<div class="container-fluid bg-breadcrumb" style="background-image: linear-gradient(135deg, rgba(50, 77, 83, 0.85)), url('{% static 'img/breadcrumb2.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 400px;">
+    <div class="container text-center py-5" style="max-width: 900px; position: relative; z-index: 1;">
+        <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Services</h3>
+        <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-secondary">Services</li>
+        </ol>    
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Services Start -->
+<div class="container-fluid services py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-5 mb-4" style="color: #324D53;">Our Travel Services</h1>
+            <p class="mb-0">At Ballan Travel, we offer a comprehensive range of travel services to meet all your needs. From flight bookings to visa assistance and cargo shipping, we've got you covered.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-plane fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Flight Booking</h4>
+                    <p class="mb-4">We offer comprehensive flight booking services to destinations worldwide, finding the best routes and prices for your journey.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Book Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-passport fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Visa Assistance</h4>
+                    <p class="mb-4">Navigating visa requirements can be complex. We provide expert guidance and support to help you secure the necessary travel documents.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Apply Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-shipping-fast fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Cargo & Shipping</h4>
+                    <p class="mb-4">We provide safe and efficient cargo solutions for your personal and commercial shipping needs across the globe.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Ship Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-hotel fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Hotel Reservations</h4>
+                    <p class="mb-4">Find the perfect accommodation for your trip with our wide selection of hotels at competitive prices.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Book Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Travel Insurance</h4>
+                    <p class="mb-4">Protect yourself against unexpected events with our comprehensive travel insurance plans.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Get Covered</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-4">
+                    <div class="service-icon bg-white rounded-circle p-3 mb-4" style="width: 80px; height: 80px;">
+                        <i class="fas fa-users fa-2x text-primary"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Group Travel</h4>
+                    <p class="mb-4">Planning a trip for a group? We offer special packages and personalized services for group travel.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" href="{% url 'contact' %}">Plan Trip</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+<!-- Process Start -->
+<div class="container-fluid process py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-5 mb-4" style="color: #324D53;">Our Simple Process</h1>
+            <p class="mb-0">We've made our booking process as simple as possible to ensure a hassle-free experience for our clients.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="process-item text-center">
+                    <div class="process-icon bg-primary rounded-circle p-4 mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fas fa-search fa-3x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Search</h4>
+                    <p class="mb-0">Browse through our services and find what best suits your travel needs.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="process-item text-center">
+                    <div class="process-icon bg-primary rounded-circle p-4 mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fas fa-edit fa-3x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Book</h4>
+                    <p class="mb-0">Fill out our simple booking form or contact our team directly to make a reservation.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="process-item text-center">
+                    <div class="process-icon bg-primary rounded-circle p-4 mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fas fa-check fa-3x text-white"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: #324D53;">Travel</h4>
+                    <p class="mb-0">Receive your confirmation and enjoy your journey with the peace of mind that comes with our service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Process End -->
+
+<!-- CTA Start -->
+<div class="container-fluid cta py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h1 class="display-5 mb-4 text-white">Need Help With Your Travel Plans?</h1>
+                <p class="fs-5 text-white mb-5">Our team of travel experts is ready to assist you with any questions or special requirements you may have.</p>
+                <a href="{% url 'contact' %}" class="btn btn-light rounded-pill py-3 px-5">Contact Our Team</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CTA End -->
+{% endblock %}
