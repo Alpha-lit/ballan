@@ -1,238 +1,293 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Ballan Travel - Your Gateway to Global Adventures</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="travel, tours, adventure, vacation, holidays" name="keywords">
-        <meta content="Ballan Travel offers exceptional travel experiences and tour packages worldwide" name="description">
-        <!-- Favicon -->
-        <link href="{% static 'img/favicon.ico' %}" rel="icon">
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="{% static 'css/style.css' %}" rel="stylesheet">
-        
-        <!-- Custom Brand Colors -->
-        <style>
-            :root {
-                --brand-primary: #324D53;
-                --brand-secondary: #B74E2D;
-                --brand-accent: #f8f8f8;
-            }
-            
-            .bg-primary {
-                background-color: var(--brand-primary) !important;
-            }
-            
-            .text-primary {
-                color: var(--brand-primary) !important;
-            }
-            
-            .btn-primary {
-                background-color: var(--brand-primary) !important;
-                border-color: var(--brand-primary) !important;
-            }
-            
-            .btn-primary:hover {
-                background-color: var(--brand-accent) !important;
-                border-color: var(--brand-accent) !important;
-            }
-            
-            .text-secondary {
-                color: var(--brand-secondary) !important;
-            }
-            
-            .service-item .service-title .service-content {
-                background-color: var(--brand-primary) !important;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
-            <div class="row gx-0 align-items-center">
-                <div class="col-lg-5 text-center text-lg-start mb-lg-0">
-                    <div class="d-flex">
-                        <a href="mailto:info@ballantravel.com" class="text-white me-4"><i class="fas fa-envelope text-secondary me-2"></i>info@ballantravel.com</a>
-                        <a href="tel:+252614830002" class="text-white me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>+252 61483 0002</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://twitter.com/ballantravel"><i class="fab fa-whatsapp fw-normal text-secondary"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://facebook.com/ballantravel"><i class="fab fa-facebook-f fw-normal text-secondary"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://linkedin.com/company/ballantravel"><i class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://instagram.com/ballantravel"><i class="fab fa-instagram fw-normal text-secondary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="{% url 'contact' %}" class="text-white me-2"> Help</a><small> / </small>
-                        <a href="{% url 'contact' %}" class="text-white mx-2"> Support</a><small> / </small>
-                        <a href="{% url 'contact' %}" class="text-white ms-2"> Contact</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Topbar End -->
-<style>
-    .navbar-logo-custom {
-    height: 125px !important;
-    width: auto !important;
-    max-height: none !important;
-    background-size: contain !important;
-}
-
-.navbar-brand {
-    height: auto !important;
-    padding: 0 !important;
-}
-</style>
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid nav-bar p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{% url 'home' %}" class="navbar-brand p-0">
-                    <img src="{% static 'img/logo.png' %}" alt="Ballan Travel" class="navbar-logo-custom">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="{% url 'home' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
-                    <a href="{% url 'about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
-                    <a href="{% url 'services' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
-                    <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
-                </div>
-                </div>
-            </nav>
-        </div>
-        <!-- Navbar & Hero End -->
-
-        {% block content %}{% endblock %}
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Travel Street, New York, USA</a>
-                            <a href="mailto:info@ballantravel.com"><i class="fas fa-envelope me-2"></i> info@ballantravel.com</a>
-                            <a href="tel:+1234567890"><i class="fas fa-phone me-2"></i> +1 (234) 567-890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +1 (234) 567-891</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                                <a class="btn mx-1" href="https://www.facebook.com/share/1AcBypqZcV/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn mx-1" href="https://twitter.com/ballantravel"><i class="fab fa-twitter"></i></a>
-                                <a class="btn mx-1" href="https://instagram.com/ballantravel"><i class="fab fa-instagram"></i></a>
-                                <a class="btn mx-1" href="https://linkedin.com/company/ballantravel"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4">Opening Time</h4>
-                            <div class="mb-3">
-                                <h6 class="text-white mb-0">Sat - Friday:</h6>
-                                <p class="text-white mb-0">08.00 am to 05.00 pm</p>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="text-white mb-0">Saturday:</h6>
-                                <p class="text-white mb-0">10.00 am to 05.00 pm</p>
-                            </div>
-                            <div class="mb-3">
-                                <h6 class="text-white mb-0">Sunday:</h6>
-                                <p class="text-white mb-0">11.00 am to 03.00 pm</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-secondary mb-4">Our Services</h4>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Adventure Travel</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Luxury Tours</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Cultural Experiences</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Family Vacations</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Honeymoon Packages</a>
-                            <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Beach Holidays</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-secondary mb-4">Newsletter</h4>
-                            <p class="text-white mb-3">Subscribe to our newsletter for exclusive travel deals and destination inspiration.</p>
-                            <div class="position-relative mx-auto rounded-pill">
-                                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                                <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Ballan Travel</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-white">
-                        <a href="#" class="border-bottom text-white">Privacy Policy</a> / <a href="#" class="border-bottom text-white">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
-    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
-    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<head>
+    <meta charset="utf-8">
     
+    <!-- SEO: Dynamic Title Tag for Brand Dominance -->
+    <title>{% block title %}Ballan Travel - Your Gateway to Global Adventures | Official Site{% endblock %}</title>
+    
+    <!-- SEO: Meta Viewport -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <!-- SEO: Dynamic Meta Description -->
+    <meta name="description" content="{% block description %}Discover your next adventure with Ballan Travel. We offer exceptional travel experiences and tour packages worldwide. Book your dream vacation today!{% endblock %}">
+    
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    
+    <!-- SEO: Advanced Robots Meta Tag -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
-    <!-- Template Javascript -->
-    <script src="{% static 'js/main.js' %}"></script>
-    </body>
+    <!-- SEO: Author and Language -->
+    <meta name="author" content="Ballan Travel">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="SO-BN" />
+    <meta name="geo.placename" content="Mogadishu" />
+    <meta name="geo.position" content="2.046934;45.318162" />
+    <meta name="ICBM" content="2.046934, 45.318162" />
 
+    <!-- SEO: Hreflang for International SEO (Placeholder) -->
+    <!-- Uncomment and add more languages/regions as needed -->
+    <!--
+    <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri }}" />
+    <link rel="alternate" hreflang="so" href="{{ request.build_absolute_uri }}?lang=so" />
+    <link rel="alternate" hreflang="x-default" href="{{ request.build_absolute_uri }}" />
+    -->
+
+    <!-- SEO: Advanced Structured Data (Schema.org) for Brand & Knowledge Panel -->
+    <!-- CRITICAL: This code sends powerful entity signals to Google. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TravelAgency", "Organization"],
+      "@id": "{{ request.scheme }}://{{ request.get_host }}#organization",
+      "name": "Ballan Travel",
+      "alternateName": "BallanTravel",
+      "url": "{{ request.scheme }}://{{ request.get_host }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.png' %}",
+        "width": 600,
+        "height": 60
+      },
+      "description": "Ballan Travel offers exceptional travel experiences and tour packages worldwide, specializing in adventure, luxury, and cultural tours from our base in Mogadishu, Somalia.",
+      "foundingDate": "YYYY-MM-DD", <!-- TODO: Replace with your founding date -->
+      "areaServed": {
+        "@type": "Country",
+        "name": "Somalia"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+252614830002",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Somali"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Banaadir", <!-- TODO: Use a more specific street address -->
+        "addressLocality": "Mogadishu",
+        "addressRegion": "Banaadir",
+        "postalCode": "BK001", <!-- TODO: Verify postal code -->
+        "addressCountry": "SO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "2.046934", <!-- Corrected coordinates for Mogadishu -->
+        "longitude": "45.318162"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/ballantravel",
+        "https://www.instagram.com/ballantravel",
+        "https://www.linkedin.com/company/ballantravel",
+        "https://twitter.com/ballantravel"
+      ]
+    }
+    </script>
+
+    <!-- Open Graph / Facebook for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="{% block og_title %}{% block title %}Ballan Travel - Your Gateway to Global Adventures{% endblock %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{% block description %}Discover your next adventure with Ballan Travel...{% endblock %}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.png' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Ballan Travel">
+
+    <!-- Twitter Card for Social Sharing -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.build_absolute_uri }}">
+    <meta property="twitter:title" content="{% block twitter_title %}{% block title %}Ballan Travel - Your Gateway to Global Adventures{% endblock %}{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}{% block description %}Discover your next adventure with Ballan Travel...{% endblock %}{% endblock %}">
+    <meta property="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.png' %}{% endblock %}">
+    <meta property="twitter:site" content="@ballantravel">
+
+    <!-- Performance: Preconnect, DNS-Prefetch, and Preload for Speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//use.fontawesome.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" as="style">
+    <link rel="preload" href="{% static 'css/bootstrap.min.css' %}" as="style">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+    <meta name="theme-color" content="#324D53"> <!-- Brand color for browser UI -->
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Custom Brand Colors -->
+    <style>
+        :root {
+            --brand-primary: #324D53;
+            --brand-secondary: #B74E2D;
+            --brand-accent: #f8f8f8;
+        }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <!-- SEO: Skip to main content link for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" aria-hidden="true" style="z-index: 9999;">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+                <div class="d-flex">
+                    <a href="mailto:info@ballantravel.com" class="text-white me-4"><i class="fas fa-envelope text-secondary me-2"></i>info@ballantravel.com</a>
+                    <a href="tel:+252614830002" class="text-white me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>+252 61483 0002</a>
+                </div>
+            </div>
+            <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://wa.me/252614830002" rel="noopener noreferrer" aria-label="Contact us on WhatsApp"><i class="fab fa-whatsapp fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://facebook.com/ballantravel" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://linkedin.com/company/ballantravel" rel="noopener noreferrer" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://instagram.com/ballantravel" rel="noopener noreferrer" aria-label="Visit our Instagram page"><i class="fab fa-instagram fw-normal text-secondary"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a href="{% url 'contact' %}" class="text-white me-2"> Help</a><small> / </small>
+                    <a href="{% url 'contact' %}" class="text-white mx-2"> Support</a><small> / </small>
+                    <a href="{% url 'contact' %}" class="text-white ms-2"> Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Header with Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="{% url 'home' %}" class="navbar-brand p-0">
+                <!-- Use H1 for the logo on the homepage only for better semantic structure -->
+                {% if request.resolver_match.url_name == 'home' %}
+                    <h1 class="m-0"><img src="{% static 'img/logo.png' %}" alt="Ballan Travel Logo" class="navbar-logo-custom"></h1>
+                {% else %}
+                    <span class="m-0"><img src="{% static 'img/logo.png' %}" alt="Ballan Travel Logo" class="navbar-logo-custom"></span>
+                {% endif %}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto py-0">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a></li>
+                    <li class="nav-item"><a href="{% url 'services' %}" class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">Our Tours</a></li>
+                    <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SEO: Breadcrumb (Placeholder - implement on other pages) -->
+    {% block breadcrumb %}
+    <!-- Example for a services page:
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Our Tours</li>
+        </ol>
+    </nav>
+    -->
+    {% endblock %}
+
+    <!-- Main Content -->
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Start -->
+    <footer class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- ... (rest of footer content) ... -->
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Our Services</h4>
+                        <a href="{% url 'services' %}#adventure-travel"><i class="fas fa-angle-right me-2"></i> Adventure Travel</a>
+                        <a href="{% url 'services' %}#luxury-tours"><i class="fas fa-angle-right me-2"></i> Luxury Tours</a>
+                        <a href="{% url 'services' %}#cultural-experiences"><i class="fas fa-angle-right me-2"></i> Cultural Experiences</a>
+                        <a href="{% url 'services' %}#family-vacations"><i class="fas fa-angle-right me-2"></i> Family Vacations</a>
+                        <a href="{% url 'services' %}#honeymoon-packages"><i class="fas fa-angle-right me-2"></i> Honeymoon Packages</a>
+                        <a href="{% url 'services' %}#beach-holidays"><i class="fas fa-angle-right me-2"></i> Beach Holidays</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white">© {% now "Y" %} Ballan Travel, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!-- IMPORTANT: Create these pages and link them -->
+                    <a href="{% url 'privacy_policy' %}">Privacy Policy</a> / <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="btn btn-primary btn-lg-square back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>   
+
+    <!-- JavaScript Libraries -->
+    <!-- Use 'defer' to prevent render-blocking -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}" defer></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}" defer></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}" defer></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}" defer></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    
+    <noscript>
+        <div class="alert alert-warning text-center" role="alert">
+            For the best experience, please enable JavaScript.
+        </div>
+    </noscript>
+</body>
 </html>
